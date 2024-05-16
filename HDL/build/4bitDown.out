@@ -1,0 +1,108 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "F:\iverilog\lib\ivl\system.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "F:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "F:\iverilog\lib\ivl\va_math.vpi";
+S_00000204a2dbafc0 .scope module, "counter_tb" "counter_tb" 2 40;
+ .timescale -9 -9;
+v00000204a2c667c0_0 .var "clk", 0 0;
+v00000204a2c66860_0 .net "q", 3 0, L_00000204a2c687e0;  1 drivers
+v00000204a2c62ca0_0 .var "reset", 0 0;
+S_00000204a2dbb300 .scope module, "counter_circuit1" "counter" 2 44, 2 27 0, S_00000204a2dbafc0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "CLK";
+    .port_info 1 /INPUT 1 "Reset";
+    .port_info 2 /OUTPUT 4 "q";
+L_00000204a2c687e0 .functor BUFZ 4, v00000204a2dbe360_0, C4<0000>, C4<0000>, C4<0000>;
+v00000204a2c664a0_0 .net "CLK", 0 0, v00000204a2c667c0_0;  1 drivers
+v00000204a2c66540_0 .net "Reset", 0 0, v00000204a2c62ca0_0;  1 drivers
+v00000204a2c665e0_0 .net "d_temp", 3 0, L_00000204a2c62840;  1 drivers
+v00000204a2c66680_0 .net "q", 3 0, L_00000204a2c687e0;  alias, 1 drivers
+v00000204a2c66720_0 .net "q_temp", 3 0, v00000204a2dbe360_0;  1 drivers
+S_00000204a2dbb490 .scope module, "adder_circuit1" "addOne" 2 35, 2 18 0, S_00000204a2dbb300;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "I";
+    .port_info 1 /OUTPUT 4 "O";
+v00000204a2dbb150_0 .net "I", 3 0, v00000204a2dbe360_0;  alias, 1 drivers
+v00000204a2db6940_0 .net "O", 3 0, L_00000204a2c62840;  alias, 1 drivers
+L_00000204a2cb7038 .functor BUFT 1, C4<0001>, C4<0>, C4<0>, C4<0>;
+v00000204a2db6b60_0 .net/2u *"_ivl_0", 3 0, L_00000204a2cb7038;  1 drivers
+L_00000204a2c62840 .arith/sub 4, v00000204a2dbe360_0, L_00000204a2cb7038;
+S_00000204a2dbe090 .scope module, "register_circuit1" "register" 2 34, 2 1 0, S_00000204a2dbb300;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "reset";
+    .port_info 2 /INPUT 4 "d";
+    .port_info 3 /OUTPUT 4 "q";
+v00000204a2dbe220_0 .net "clk", 0 0, v00000204a2c667c0_0;  alias, 1 drivers
+v00000204a2dbe2c0_0 .net "d", 3 0, L_00000204a2c62840;  alias, 1 drivers
+v00000204a2dbe360_0 .var "q", 3 0;
+v00000204a2dbe400_0 .net "reset", 0 0, v00000204a2c62ca0_0;  alias, 1 drivers
+E_00000204a2c675e0 .event posedge, v00000204a2dbe400_0, v00000204a2dbe220_0;
+    .scope S_00000204a2dbe090;
+T_0 ;
+    %wait E_00000204a2c675e0;
+    %load/vec4 v00000204a2dbe400_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 15, 0, 4;
+    %assign/vec4 v00000204a2dbe360_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v00000204a2dbe2c0_0;
+    %assign/vec4 v00000204a2dbe360_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_00000204a2dbafc0;
+T_1 ;
+    %load/vec4 v00000204a2c667c0_0;
+    %inv;
+    %store/vec4 v00000204a2c667c0_0, 0, 1;
+    %delay 10, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_00000204a2dbafc0;
+T_2 ;
+    %vpi_call 2 51 "$dumpfile", "test.vcd" {0 0 0};
+    %vpi_call 2 52 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000204a2dbafc0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v00000204a2c667c0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v00000204a2c62ca0_0, 0;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v00000204a2c62ca0_0, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %delay 20, 0;
+    %vpi_call 2 73 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_00000204a2dbafc0;
+T_3 ;
+    %vpi_call 2 76 "$monitor", "clk = %b, reset = %b, q = %b", v00000204a2c667c0_0, v00000204a2c62ca0_0, v00000204a2c66860_0 {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "4bitDown.v";

@@ -1,0 +1,100 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "F:\iverilog\lib\ivl\system.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "F:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "F:\iverilog\lib\ivl\va_math.vpi";
+S_00000204e53b6420 .scope module, "comb1_tb" "comb1_tb" 2 13;
+ .timescale -9 -12;
+v00000204e52b1c00_0 .var "A", 0 0;
+v00000204e52b15c0_0 .var "D", 0 0;
+v00000204e52b1de0_0 .net "L", 0 0, L_00000204e52b4030;  1 drivers
+v00000204e52b2600_0 .var "X", 0 0;
+S_00000204e53b65b0 .scope module, "uut" "comb1" 2 18, 2 1 0, S_00000204e53b6420;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "D";
+    .port_info 1 /INPUT 1 "X";
+    .port_info 2 /INPUT 1 "A";
+    .port_info 3 /OUTPUT 1 "L";
+L_00000204e52a6130 .functor NOT 1, v00000204e52b15c0_0, C4<0>, C4<0>, C4<0>;
+L_00000204e52a6280 .functor NOT 1, v00000204e52b2600_0, C4<0>, C4<0>, C4<0>;
+L_00000204e52a6600 .functor AND 1, L_00000204e52a6130, L_00000204e52a6280, C4<1>, C4<1>;
+L_00000204e52a6520 .functor AND 1, L_00000204e52a6600, v00000204e52b1c00_0, C4<1>, C4<1>;
+L_00000204e52a61a0 .functor NOT 1, v00000204e52b15c0_0, C4<0>, C4<0>, C4<0>;
+L_00000204e52a5fe0 .functor AND 1, L_00000204e52a61a0, v00000204e52b2600_0, C4<1>, C4<1>;
+L_00000204e52a62f0 .functor AND 1, L_00000204e52a5fe0, v00000204e52b1c00_0, C4<1>, C4<1>;
+L_00000204e52a6360 .functor OR 1, L_00000204e52a6520, L_00000204e52a62f0, C4<0>, C4<0>;
+L_00000204e52a6590 .functor NOT 1, v00000204e52b2600_0, C4<0>, C4<0>, C4<0>;
+L_00000204e52a6440 .functor AND 1, v00000204e52b15c0_0, L_00000204e52a6590, C4<1>, C4<1>;
+L_00000204e52b3f50 .functor NOT 1, v00000204e52b1c00_0, C4<0>, C4<0>, C4<0>;
+L_00000204e52b4180 .functor AND 1, L_00000204e52a6440, L_00000204e52b3f50, C4<1>, C4<1>;
+L_00000204e52b39a0 .functor OR 1, L_00000204e52a6360, L_00000204e52b4180, C4<0>, C4<0>;
+L_00000204e52b4260 .functor NOT 1, v00000204e52b2600_0, C4<0>, C4<0>, C4<0>;
+L_00000204e52b40a0 .functor AND 1, v00000204e52b15c0_0, L_00000204e52b4260, C4<1>, C4<1>;
+L_00000204e52b41f0 .functor AND 1, L_00000204e52b40a0, v00000204e52b1c00_0, C4<1>, C4<1>;
+L_00000204e52b3850 .functor OR 1, L_00000204e52b39a0, L_00000204e52b41f0, C4<0>, C4<0>;
+L_00000204e52b3930 .functor AND 1, v00000204e52b15c0_0, v00000204e52b2600_0, C4<1>, C4<1>;
+L_00000204e52b3b60 .functor AND 1, L_00000204e52b3930, v00000204e52b1c00_0, C4<1>, C4<1>;
+L_00000204e52b4030 .functor OR 1, L_00000204e52b3850, L_00000204e52b3b60, C4<0>, C4<0>;
+v00000204e52a77b0_0 .net "A", 0 0, v00000204e52b1c00_0;  1 drivers
+v00000204e52a7c10_0 .net "D", 0 0, v00000204e52b15c0_0;  1 drivers
+v00000204e52a7cb0_0 .net "L", 0 0, L_00000204e52b4030;  alias, 1 drivers
+v00000204e52a7850_0 .net "X", 0 0, v00000204e52b2600_0;  1 drivers
+v00000204e52a7d50_0 .net *"_ivl_0", 0 0, L_00000204e52a6130;  1 drivers
+v00000204e52a7fd0_0 .net *"_ivl_10", 0 0, L_00000204e52a5fe0;  1 drivers
+v00000204e52a73f0_0 .net *"_ivl_12", 0 0, L_00000204e52a62f0;  1 drivers
+v00000204e52a7670_0 .net *"_ivl_14", 0 0, L_00000204e52a6360;  1 drivers
+v00000204e52a7350_0 .net *"_ivl_16", 0 0, L_00000204e52a6590;  1 drivers
+v00000204e52a7a30_0 .net *"_ivl_18", 0 0, L_00000204e52a6440;  1 drivers
+v00000204e52a7710_0 .net *"_ivl_2", 0 0, L_00000204e52a6280;  1 drivers
+v00000204e52a78f0_0 .net *"_ivl_20", 0 0, L_00000204e52b3f50;  1 drivers
+v00000204e52a7490_0 .net *"_ivl_22", 0 0, L_00000204e52b4180;  1 drivers
+v00000204e52a7df0_0 .net *"_ivl_24", 0 0, L_00000204e52b39a0;  1 drivers
+v00000204e52a7e90_0 .net *"_ivl_26", 0 0, L_00000204e52b4260;  1 drivers
+v00000204e52a7ad0_0 .net *"_ivl_28", 0 0, L_00000204e52b40a0;  1 drivers
+v00000204e52a7990_0 .net *"_ivl_30", 0 0, L_00000204e52b41f0;  1 drivers
+v00000204e52a7f30_0 .net *"_ivl_32", 0 0, L_00000204e52b3850;  1 drivers
+v00000204e52a8070_0 .net *"_ivl_34", 0 0, L_00000204e52b3930;  1 drivers
+v00000204e52a8110_0 .net *"_ivl_36", 0 0, L_00000204e52b3b60;  1 drivers
+v00000204e52a72b0_0 .net *"_ivl_4", 0 0, L_00000204e52a6600;  1 drivers
+v00000204e52a7210_0 .net *"_ivl_6", 0 0, L_00000204e52a6520;  1 drivers
+v00000204e52b18e0_0 .net *"_ivl_8", 0 0, L_00000204e52a61a0;  1 drivers
+    .scope S_00000204e53b6420;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000204e52b15c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000204e52b2600_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000204e52b1c00_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000204e52b1c00_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000204e52b2600_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000204e52b15c0_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000204e52b2600_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000204e52b1c00_0, 0, 1;
+    %delay 20000, 0;
+    %end;
+    .thread T_0;
+    .scope S_00000204e53b6420;
+T_1 ;
+    %vpi_call 2 42 "$monitor", "D=%d X=%d A=%d L=%d\012", v00000204e52b15c0_0, v00000204e52b2600_0, v00000204e52b1c00_0, v00000204e52b1de0_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "testBegin.v";

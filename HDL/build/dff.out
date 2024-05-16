@@ -1,0 +1,62 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "F:\iverilog\lib\ivl\system.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "F:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "F:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "F:\iverilog\lib\ivl\va_math.vpi";
+S_000001f4dcc753b0 .scope module, "dff_tb" "dff_tb" 2 13;
+ .timescale -9 -12;
+v000001f4dcc2ee80_0 .var "clk", 0 0;
+v000001f4dcc2ef20_0 .var "d", 0 0;
+v000001f4dcc2ba20_0 .net "q", 0 0, v000001f4dcc2ede0_0;  1 drivers
+S_000001f4dcc75540 .scope module, "dftest" "d_ff" 2 17, 2 1 0, S_000001f4dcc753b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "d";
+    .port_info 2 /OUTPUT 1 "q";
+v000001f4dcc269d0_0 .net "clk", 0 0, v000001f4dcc2ee80_0;  1 drivers
+v000001f4dcc26bf0_0 .net "d", 0 0, v000001f4dcc2ef20_0;  1 drivers
+v000001f4dcc2ede0_0 .var "q", 0 0;
+E_000001f4dcc2c470 .event posedge, v000001f4dcc269d0_0;
+    .scope S_000001f4dcc75540;
+T_0 ;
+    %wait E_000001f4dcc2c470;
+    %load/vec4 v000001f4dcc26bf0_0;
+    %assign/vec4 v000001f4dcc2ede0_0, 0;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_000001f4dcc753b0;
+T_1 ;
+    %load/vec4 v000001f4dcc2ee80_0;
+    %inv;
+    %store/vec4 v000001f4dcc2ee80_0, 0, 1;
+    %delay 10000, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001f4dcc753b0;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001f4dcc2ee80_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001f4dcc2ef20_0, 0;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v000001f4dcc2ef20_0, 0;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001f4dcc2ef20_0, 0;
+    %end;
+    .thread T_2;
+    .scope S_000001f4dcc753b0;
+T_3 ;
+    %vpi_call 2 34 "$monitor", "clk = %d, d = %d, q = %d\012", v000001f4dcc2ee80_0, v000001f4dcc2ef20_0, v000001f4dcc2ba20_0 {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "dff.v";
