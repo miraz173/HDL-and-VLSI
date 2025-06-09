@@ -1,0 +1,60 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55680259cca0 .scope module, "CU_tb" "CU_tb" 2 1;
+ .timescale 0 0;
+v0x5568025b08f0_0 .net "IMM_SEL", 0 0, L_0x5568025b0f10;  1 drivers
+v0x5568025b09b0_0 .net "OP", 0 0, L_0x5568025b0c20;  1 drivers
+v0x5568025b0a50_0 .var "Opcode", 1 0;
+v0x5568025b0b50_0 .net "REG_EN", 0 0, L_0x5568025b0e00;  1 drivers
+S_0x55680259ce30 .scope module, "uut" "CU" 2 7, 3 1 0, S_0x55680259cca0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "Opcode";
+    .port_info 1 /OUTPUT 1 "OP";
+    .port_info 2 /OUTPUT 1 "REG_EN";
+    .port_info 3 /OUTPUT 1 "IMM_SEL";
+L_0x5568025b0e00 .functor NOT 1, L_0x5568025b0d60, C4<0>, C4<0>, C4<0>;
+v0x55680259d080_0 .net "IMM_SEL", 0 0, L_0x5568025b0f10;  alias, 1 drivers
+v0x5568025b0500_0 .net "OP", 0 0, L_0x5568025b0c20;  alias, 1 drivers
+v0x5568025b05c0_0 .net "Opcode", 1 0, v0x5568025b0a50_0;  1 drivers
+v0x5568025b0680_0 .net "REG_EN", 0 0, L_0x5568025b0e00;  alias, 1 drivers
+v0x5568025b0740_0 .net *"_ivl_3", 0 0, L_0x5568025b0d60;  1 drivers
+L_0x5568025b0c20 .part v0x5568025b0a50_0, 0, 1;
+L_0x5568025b0d60 .part v0x5568025b0a50_0, 1, 1;
+L_0x5568025b0f10 .part v0x5568025b0a50_0, 1, 1;
+    .scope S_0x55680259cca0;
+T_0 ;
+    %vpi_call 2 15 "$dumpfile", "cu_test.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55680259cca0 {0 0 0};
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x5568025b0a50_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x5568025b0a50_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x5568025b0a50_0, 0, 2;
+    %delay 10, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x5568025b0a50_0, 0, 2;
+    %delay 10, 0;
+    %vpi_call 2 30 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x55680259cca0;
+T_1 ;
+    %vpi_call 2 34 "$monitor", "Time=%0t Opcode=%b -> OP=%b REG_EN=%b IMM_SEL=%b", $time, v0x5568025b0a50_0, v0x5568025b09b0_0, v0x5568025b0b50_0, v0x5568025b08f0_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "CU_tb.v";
+    "CU.v";

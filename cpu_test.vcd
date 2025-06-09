@@ -1,0 +1,200 @@
+$date
+	Mon Jun  9 19:10:49 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module CPU_tb $end
+$var wire 1 ! ZF $end
+$var wire 1 " SF $end
+$var wire 5 # R [4:0] $end
+$var wire 1 $ GF $end
+$var wire 1 % CF $end
+$var reg 10 & PI [9:0] $end
+$scope module cpu1 $end
+$var wire 5 ' A [4:0] $end
+$var wire 1 $ GF $end
+$var wire 10 ( PI [9:0] $end
+$var wire 1 ! ZF $end
+$var wire 1 " SF $end
+$var wire 1 ) REG_EN $end
+$var wire 5 * R [4:0] $end
+$var wire 1 + OP $end
+$var wire 1 , IMM_SEL $end
+$var wire 1 % CF $end
+$var wire 5 - B [4:0] $end
+$scope module alu1 $end
+$var wire 5 . A [4:0] $end
+$var wire 5 / B [4:0] $end
+$var wire 1 ! ZF $end
+$var wire 1 " SF $end
+$var wire 5 0 R_SHL [4:0] $end
+$var wire 5 1 R_NOT [4:0] $end
+$var wire 1 2 R_CF $end
+$var wire 1 + OP $end
+$var wire 1 % CF $end
+$var reg 5 3 R [4:0] $end
+$scope module NOT1 $end
+$var wire 5 4 A [4:0] $end
+$var wire 5 5 R [4:0] $end
+$upscope $end
+$scope module SHL1 $end
+$var wire 5 6 A [4:0] $end
+$var wire 5 7 B [4:0] $end
+$var wire 3 8 shift_amt [2:0] $end
+$var reg 1 2 CF $end
+$var reg 5 9 R [4:0] $end
+$upscope $end
+$upscope $end
+$scope module cu1 $end
+$var wire 2 : Opcode [1:0] $end
+$var wire 1 ) REG_EN $end
+$var wire 1 + OP $end
+$var wire 1 , IMM_SEL $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 :
+b1010 9
+b1 8
+b1 7
+b10101 6
+b1010 5
+b10101 4
+b1010 3
+12
+b1010 1
+b1010 0
+b1 /
+b10101 .
+b1 -
+0,
+0+
+b1010 *
+1)
+b10100000 (
+b10101 '
+b10100000 &
+0%
+1$
+b1010 #
+0"
+0!
+$end
+#10000
+0!
+0$
+1"
+b11000 #
+b11000 *
+b11000 3
+b11 8
+1+
+b11100 1
+b11100 5
+02
+b11000 0
+b11000 9
+b11 -
+b11 /
+b11 7
+b1 :
+b11 '
+b11 .
+b11 4
+b11 6
+b100100100 &
+b100100100 (
+#20000
+1$
+0"
+b110 #
+b110 *
+b110 3
+b110 0
+b110 9
+b1 8
+b1 -
+b1 /
+b1 7
+b100100011 &
+b100100011 (
+#30000
+1%
+12
+b11 8
+0)
+b11 -
+b11 /
+b11 7
+b1000 #
+b1000 *
+b1000 3
+1,
+b11010 1
+b11010 5
+b1000 0
+b1000 9
+b11 :
+b101 '
+b101 .
+b101 4
+b101 6
+b1101000011 &
+b1101000011 (
+#40000
+0!
+0$
+1"
+0%
+02
+b10000 #
+b10000 *
+b10000 3
+b10 8
+b1011 1
+b1011 5
+b10000 0
+b10000 9
+b10 -
+b10 /
+b10 7
+b10100 '
+b10100 .
+b10100 4
+b10100 6
+b1110000010 &
+b1110000010 (
+#50000
+1!
+0$
+0"
+1%
+12
+b0 #
+b0 *
+b0 3
+b101 8
+b1010 1
+b1010 5
+b0 0
+b0 9
+b101 -
+b101 /
+b101 7
+b10101 '
+b10101 .
+b10101 4
+b10101 6
+b1110100101 &
+b1110100101 (
+#60000

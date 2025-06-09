@@ -1,0 +1,190 @@
+$date
+	Mon Jun  9 02:28:20 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module ALU_tb $end
+$var wire 1 ! ZF $end
+$var wire 1 " SF $end
+$var wire 5 # R [4:0] $end
+$var wire 1 $ CF $end
+$var reg 5 % A [4:0] $end
+$var reg 5 & B [4:0] $end
+$var reg 1 ' OP $end
+$scope module uut $end
+$var wire 5 ( A [4:0] $end
+$var wire 5 ) B [4:0] $end
+$var wire 1 ' OP $end
+$var wire 1 ! ZF $end
+$var wire 1 " SF $end
+$var wire 5 * R_SHL [4:0] $end
+$var wire 5 + R_NOT [4:0] $end
+$var wire 1 , R_CF $end
+$var wire 1 $ CF $end
+$var reg 5 - R [4:0] $end
+$scope module NOT1 $end
+$var wire 5 . A [4:0] $end
+$var wire 5 / R [4:0] $end
+$upscope $end
+$scope module SHL1 $end
+$var wire 5 0 A [4:0] $end
+$var wire 5 1 B [4:0] $end
+$var wire 3 2 shift_amt [2:0] $end
+$var reg 1 , CF $end
+$var reg 5 3 R [4:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 3
+b0 2
+b0 1
+b0 0
+b11111 /
+b0 .
+b11111 -
+0,
+b11111 +
+b0 *
+b0 )
+b0 (
+0'
+b0 &
+b0 %
+0$
+b11111 #
+1"
+0!
+$end
+#10
+0"
+b1010 #
+b1010 -
+b1010 +
+b1010 /
+b10101 *
+b10101 3
+b10101 %
+b10101 (
+b10101 .
+b10101 0
+#20
+1!
+b0 #
+b0 -
+b0 +
+b0 /
+b11111 *
+b11111 3
+b11111 %
+b11111 (
+b11111 .
+b11111 0
+#30
+0!
+1"
+b11101 #
+b11101 -
+b10 +
+b10 /
+b11101 *
+b11101 3
+1'
+b11101 %
+b11101 (
+b11101 .
+b11101 0
+#40
+1$
+b11010 #
+b11010 -
+1,
+b11010 *
+b11010 3
+b1 2
+b1 &
+b1 )
+b1 1
+#50
+0$
+1"
+0,
+b10100 #
+b10100 -
+b10 2
+b1010 +
+b1010 /
+b10100 *
+b10100 3
+b10 &
+b10 )
+b10 1
+b10101 %
+b10101 (
+b10101 .
+b10101 0
+#60
+0"
+b1000 #
+b1000 -
+b1000 *
+b1000 3
+1$
+b11 2
+b10 +
+b10 /
+1,
+b11 &
+b11 )
+b11 1
+b11101 %
+b11101 (
+b11101 .
+b11101 0
+#70
+0"
+0$
+b1010 #
+b1010 -
+b0 2
+b10101 +
+b10101 /
+0,
+b1010 *
+b1010 3
+b0 &
+b0 )
+b0 1
+b1010 %
+b1010 (
+b1010 .
+b1010 0
+#80
+1!
+1$
+b0 #
+b0 -
+1,
+b0 *
+b0 3
+b100 2
+b100 &
+b100 )
+b100 1
+#90
+0$
+0,
+b101 2
+b101 &
+b101 )
+b101 1
+#100
